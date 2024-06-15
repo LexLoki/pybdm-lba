@@ -18,6 +18,8 @@ PyBDM: Python interface to the *Block Decomposition Method*
 .. image:: https://zenodo.org/badge/157923784.svg
   :target: https://zenodo.org/doi/10.5281/zenodo.10652064
 
+This fork is an extension with a dataset of CTM values of strings produced by Linear Bounded Automata (LBA) instead of Turing Machines.
+
 The Block Decomposition Method (BDM) approximates algorithmic complexity
 of a dataset of arbitrary size, that is, the length of the shortest computer
 program that generates it. This is not trivial as algorithmic complexity
