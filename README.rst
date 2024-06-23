@@ -29,21 +29,15 @@ mechanistic connections between elements of a system, even such that
 do not yield any regular statistical patterns that can be captured with
 more traditional tools based on probability theory and information theory.
 
-Currently 1D and 2D binary arrays are supported, as well as 1D arrays
+For Turing Machine, currently 1D and 2D binary arrays are supported, as well as 1D arrays
 with 4, 5, 6 and 9 discrete symbols.
+
+For Linear Bounded Automata, 1D binary arrays only.
 
 BDM and the necessary parts of the algorithmic information theory
 it is based on are described in `this article <https://www.mdpi.com/1099-4300/20/8/605>`_.
 
 See the official documentation_ for more information.
-
-How to cite?
-============
-
-    Talaga, S., & Tsampourakis, K. (2024). 
-    PyBDM: Python interface to the Block Decomposition Method (0.1.0) [Software]. 
-    https://zenodo.org/doi/10.5281/zenodo.10652064
-
 
 
 Installation
@@ -86,7 +80,7 @@ input represented as `Numpy <http://www.numpy.org/>`__ arrays of integer type.
 Detailed usage examples can be found in the official documentation_.
 
 
-Binary sequences (1D)
+Binary sequences (1D) (Turing Machine OR LBA)
 ---------------------
 
 .. code-block:: python
@@ -99,7 +93,7 @@ Binary sequences (1D)
 
     # Initialize BDM object
     # ndim argument specifies dimensionality of BDM
-    bdm = BDM(ndim=1)
+    bdm = BDM(ndim=1, model='LBA')
 
     # Compute BDM
     bdm.bdm(X)
@@ -108,7 +102,7 @@ Binary sequences (1D)
     bdm.ent(X)
 
 
-Binary matrices (2D)
+Binary matrices (2D) (only Turing Machine)
 --------------------
 
 .. code-block:: python
@@ -128,7 +122,7 @@ Binary matrices (2D)
     # BDM objects may also compute standard Shannon entropy in base 2
     bdm.ent(X)
 
-Non-binary sequences (1D)
+Non-binary sequences (1D) (only Turing Machine)
 -------------------------
 
 .. code-block:: python
@@ -234,13 +228,6 @@ to be noise since they extend the system's description length.
     # randomly from the set of other possible values from the alphabet.
     values = np.array([-1, -1], dtype=int)
     delta_bdm = perturbation.run(idx, values, keep_changes=True)
-
-
-Authors & Contact
-=================
-
-* Szymon Talaga <stalaga@protonmail.com>
-* Kostas Tsampourakis <kostas.tsampourakis@gmail.com>
 
 
 .. _documentation: http://pybdm-docs.rtfd.org
