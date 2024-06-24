@@ -22,12 +22,14 @@ Datasets
 """
 
 CTM_DATASETS = {
-    # 1D datasets
+    # TM - 1D datasets
     'CTM-B2-D12': 'ctm-b2-d12.pkl.gz',
     'CTM-B4-D12': 'ctm-b4-d12.pkl.gz',
     'CTM-B5-D12': 'ctm-b5-d12.pkl.gz',
     'CTM-B6-D12': 'ctm-b6-d12.pkl.gz',
     'CTM-B9-D12': 'ctm-b9-d12.pkl.gz',
-    # 2D datasets
-    'CTM-B2-D4x4': 'ctm-b2-d4x4.pkl.gz'
+    # TM - 2D datasets
+    'CTM-B2-D4x4': 'ctm-b2-d4x4.pkl.gz',
+    # LBA - 1D datasets
+    'LBA-B2-D8': 'lba-b2-d8.pkl.gz'
 }
