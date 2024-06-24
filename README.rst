@@ -49,11 +49,11 @@ Standard installation (stable)::
 
 Development version installation::
 
-    pip install git+https://github.com/sztal/pybdm.git
+    pip install git+https://github.com/LexLoki/pybdm-lba.git
 
 Local development::
 
-    git clone https://github.com/sztal/pybdm
+    git clone https://github.com/LexLoki/pybdm-lba
     cd pybdm
     pip install --editable .
 
