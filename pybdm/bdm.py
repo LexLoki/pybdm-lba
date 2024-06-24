@@ -95,17 +95,26 @@ class BDM:
     pybdm.partitions : available partition and boundary condition classes
     """
     _ndim_to_ctm = {
-        # 1D datasets
-        (1, 2): 'CTM-B2-D12',
-        (1, 4): 'CTM-B4-D12',
-        (1, 5): 'CTM-B5-D12',
-        (1, 6): 'CTM-B6-D12',
-        (1, 9): 'CTM-B9-D12',
-        # 2D datasets
-        (2, 2): 'CTM-B2-D4x4',
+        # Turing Machine CTM
+        'TM': {
+            # 1D datasets
+            (1, 2): 'CTM-B2-D12',
+            (1, 4): 'CTM-B4-D12',
+            (1, 5): 'CTM-B5-D12',
+            (1, 6): 'CTM-B6-D12',
+            (1, 9): 'CTM-B9-D12',
+            # 2D datasets
+            (2, 2): 'CTM-B2-D4x4',
+        },
+        # LBA CTM
+        'LBA': {
+            # 1D datasets
+            (1, 2): 'LBA-B2-D8'
+        },
     }
 
     def __init__(self, ndim, nsymbols=2, shape=None, partition=PartitionIgnore,
+                 model='TM',
                  ctmname=None, warn_if_missing_ctm=True, raise_if_zero=True, **kwds):
         """Initialization method.
 
@@ -128,10 +137,10 @@ class BDM:
         """
         self.ndim = ndim
         try:
-            self.ctmname = ctmname if ctmname else self._ndim_to_ctm[(ndim, nsymbols)]
+            self.ctmname = ctmname if ctmname else self._ndim_to_ctm[model][(ndim, nsymbols)]
         except KeyError:
-            msg = "no CTM dataset for 'ndim={}' and 'nsymbols={}'".format(
-                ndim, nsymbols
+            msg = "no CTM dataset for 'model={}, ndim={}' and 'nsymbols={}'".format(
+                model, ndim, nsymbols
             )
             raise CTMDatasetNotFoundError(msg)
         try:
