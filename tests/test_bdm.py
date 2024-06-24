@@ -17,9 +17,14 @@ s0 = '0'*24
 s1 = '0'*12+'1'*12
 s2 = '0'*6+'1'*12+'0'*18+'1'*12
 
+
 bdm1_test_input = [(array_from_string(s0, (24,)), 26.610413747641715),
                    (array_from_string(s1, (24,)), 51.22082749528343),
                    (array_from_string(s2, (48,)), 114.06151272200972)]
+
+bdm_lba_test_input = [(array_from_string(s0, (24,)), 32.63086697851105),
+                   (array_from_string(s1, (24,)), 95.05991128176605),
+                   (array_from_string(s2, (48,)), 159.98891146077816)]
 
 _dirpath = os.path.join(os.path.split(__file__)[0], 'data')
 # Get test input data and expected values
@@ -82,6 +87,11 @@ class TestBDM:
     @pytest.mark.parametrize('X,expected', bdm1_test_input)
     def test_bdm_d1(self, bdm_d1, X, expected):
         output = bdm_d1.bdm(X)
+        assert output == approx(expected)
+
+    @pytest.mark.parametrize('X,expected', bdm_lba_test_input)
+    def test_bdm_lba_d1(self, bdm_lba_d1, X, expected):
+        output = bdm_lba_d1.bdm(X)
         assert output == approx(expected)
 
     @pytest.mark.parametrize('X,expected', [

@@ -45,6 +45,10 @@ def bdm_d1():
     return BDM(ndim=1)
 
 @pytest.fixture(scope='session')
+def bdm_lba_d1():
+    return BDM(ndim=1, model='LBA')
+
+@pytest.fixture(scope='session')
 def bdm_d2():
     return BDM(ndim=2)
 
