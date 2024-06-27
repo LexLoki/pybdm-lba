@@ -37,7 +37,9 @@ For Linear Bounded Automata, 1D binary arrays only.
 BDM and the necessary parts of the algorithmic information theory
 it is based on are described in `this article <https://www.mdpi.com/1099-4300/20/8/605>`_.
 
-See the official documentation_ for more information.
+See the `wiki <https://github.com/LexLoki/pybdm-lba/wiki>`__ for more information.
+
+And the original project official documentation_
 
 
 Installation
