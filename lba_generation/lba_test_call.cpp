@@ -193,7 +193,7 @@ struct LBACalculator{
     bitset<OUTPUT_CAP> outputBin;
     unordered_map<string, int> counts;
     unordered_map<int, int> runCounts;
-    unordered_map<bitset<OUTPUT_CAP>, int> countsBin[OUTPUT_CAP];
+    unordered_map<bitset<OUTPUT_CAP>, long> countsBin[OUTPUT_CAP];
     //int countsBin[OUTPUT_CAP][1<<OUTPUT_CAP];
     LBA baseLBA;
     long long runCount=0, validCount=0;
