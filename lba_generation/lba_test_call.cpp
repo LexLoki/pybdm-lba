@@ -241,7 +241,7 @@ struct LBACalculator{
 
         validCount++;
         counts[output]++;
-        ///*
+        /*
         for(int i=0;i<=maxPos;i++)
             output[i] = !output[i];
         counts[output]++;
